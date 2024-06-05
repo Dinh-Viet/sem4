@@ -1,7 +1,11 @@
 package com.example.apf.Repository;
 
-import com.example.apf.Entity.Member;
+import com.example.apf.Entity.Members;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface MemberRepository extends JpaRepository<Member, String> {
+import java.lang.reflect.Member;
+import java.util.Optional;
+
+public interface MemberRepository extends JpaRepository<Members, String> {
+    Optional<Members> findByUserId(String userId);
 }

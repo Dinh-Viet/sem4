@@ -1,29 +1,19 @@
 package com.example.apf.Entity;
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
+@Entity
+@Table(name = "vehicle")
 public class Vehicle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
     private String name;
     private String model;
     private int yearOfManufacture;
     private String color;
+    // Getters and setters
 
-    public Vehicle() {
-    }
-
-    public Vehicle(Long id, String name, String model, int yearOfManufacture, String color) {
-        this.id = id;
-        this.name = name;
-        this.model = model;
-        this.yearOfManufacture = yearOfManufacture;
-        this.color = color;
-    }
 
     public Long getId() {
         return id;
@@ -65,4 +55,3 @@ public class Vehicle {
         this.color = color;
     }
 }
-

@@ -1,18 +1,27 @@
 package com.example.apf.Entity;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.IdClass;
+import jakarta.persistence.*;
+
 
 @Entity
-@IdClass(RoleId.class)
+@Table(name = "roles")
 public class Role {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+    @Column(name = "user_id")
     private String userId;
-    @Id
     private String role;
+    // Getters and setters
 
-    // Getters and Setters
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getUserId() {
         return userId;
     }
